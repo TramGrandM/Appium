@@ -3,6 +3,7 @@ from appium.webdriver.webdriver import AppiumOptions
 from login import Login
 from age_recognition import Age_Recognition
 from scroll import Scroll
+from connect_healthsource import Connection
 
 desired_caps = dict(
     platformName='Android',
@@ -26,8 +27,11 @@ login = Login(driver)
 login.login()
 # login
 # age_recognition
-aRecognition = Age_Recognition(driver)
-aRecognition.age_recognition()
-# aRecognition.select_photo()
-aRecognition.take_a_picture()
+# aRecognition = Age_Recognition(driver)
+# aRecognition.age_recognition()
+# # aRecognition.select_photo()
+# aRecognition.take_a_picture()
 # age_recognition
+# connect health source
+connect = Connection(driver)
+connect.connection()
