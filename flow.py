@@ -1,6 +1,4 @@
 from appium import webdriver
-from appium.webdriver.common.appiumby import AppiumBy
-from appium.webdriver.common.touch_action import TouchAction
 from appium.webdriver.webdriver import AppiumOptions
 from login import Login
 from age_recognition import Age_Recognition
@@ -19,11 +17,17 @@ desired_caps = dict(
 appium_option = AppiumOptions()
 appium_option.load_capabilities(desired_caps)
 driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', options=appium_option)
-driver.implicitly_wait(2)
-#
+driver.implicitly_wait(3)
+# scroll
 scroll = Scroll(driver)
+# scroll
+# login
 login = Login(driver)
 login.login()
+# login
+# age_recognition
 aRecognition = Age_Recognition(driver)
 aRecognition.age_recognition()
-aRecognition.select_photo()
+# aRecognition.select_photo()
+aRecognition.take_a_picture()
+# age_recognition

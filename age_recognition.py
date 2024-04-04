@@ -65,6 +65,34 @@ class Age_Recognition:
         choise_btn = self.driver.find_element(AppiumBy.ID, 'vitalgain.jp:id/tv_ok')
         choise_btn.click()
         # self.scroll.scroll()
-        time.sleep(3)
-        ok_btn = self.driver.find_element(AppiumBy.XPATH, '//android.app.Dialog/android.view.View/android.view.View[1]/android.widget.Button')
+        time.sleep(5)
+        ok_btn = self.driver.find_element(AppiumBy.XPATH,
+                                          '//android.app.Dialog/android.view.View/android.view.View[1]/android.widget.Button')
         ok_btn.click()
+
+    def take_a_picture(self):
+        time.sleep(3)
+        camera = self.driver.find_element(AppiumBy.XPATH,
+                                          '//android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View[1]')
+        camera.click()
+        allow_btn = self.driver.find_element(AppiumBy.XPATH,
+                                             '//android.widget.Button[@resource-id="com.android.packageinstaller:id/permission_allow_button"]')
+        if allow_btn.is_displayed():
+            allow_btn.click()
+        time.sleep(5)
+        take_apicture = self.driver.find_element(AppiumBy.ID, 'vitalgain.jp:id/register_profile_camera_layout')
+        take_apicture.click()
+        time.sleep(5)
+        allow_btn_1 = self.driver.find_element(AppiumBy.XPATH,
+                                               '//android.widget.Button[@resource-id="com.android.packageinstaller:id/permission_allow_button"]')
+        time.sleep(5)
+        if allow_btn_1.is_displayed():
+            allow_btn_1.click()
+        time.sleep(5)
+        take_btn = self.driver.find_element(AppiumBy.XPATH, '//GLButton[@content-desc="NONE" and @text="Shutter"]')
+        take_btn.click()
+        time.sleep(5)
+        btn_ok = self.driver.find_element(AppiumBy.ID, 'com.sec.android.app.camera:id/okay')
+        btn_ok.click()
+        btn_use = self.driver.find_element(AppiumBy.ID, 'vitalgain.jp:id/tv_ok')
+        btn_use.click()
