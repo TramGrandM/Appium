@@ -12,7 +12,4 @@ def connect(query):
     cur = conn.cursor()
     cur.execute(query)
     rows = cur.fetchall()
-    # for row in rows:
-    #     print(row)
-    #     print("Total", row[1])
     return rows

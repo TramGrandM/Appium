@@ -19,7 +19,7 @@ class Login:
             login_btn = self.driver.find_element(AppiumBy.ID, 'vitalgain.jp:id/activity_intro_log_in_btn')
             login_btn.click()
             username = self.driver.find_element(AppiumBy.ID, "vitalgain.jp:id/login_username_edt")
-            username.send_keys("huyentram")
+            username.send_keys("tramtram")
             password = self.driver.find_element(AppiumBy.ID, 'vitalgain.jp:id/login_password_edt')
             password.click()
             password.send_keys('12345678')

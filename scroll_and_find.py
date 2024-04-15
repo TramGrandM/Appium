@@ -17,7 +17,7 @@ class Scroll_and_Find:
                 find_ele = self.driver.find_element(*element)
                 found_element = True
                 text = find_ele.text
-                print("Text:", text)
+                print("Function:", text)
                 find_ele.click()
             except NoSuchElementException:
                 self.scroll.scroll()
