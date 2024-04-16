@@ -25,3 +25,5 @@ class Weight:
         img.click()
         add_btn = self.driver.find_element(AppiumBy.XPATH, '//android.widget.Button[@resource-id="vitalgain.jp:id/dialog_record_weight_add_bt"]')
         add_btn.click()
+        time.sleep(3)
+        print("Weight - Done!")

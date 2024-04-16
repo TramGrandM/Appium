@@ -9,6 +9,9 @@ from dashboard_settings import Dashboard_setting
 from sleep import Sleep
 from weight import Weight
 from nutrition import Nutrition
+from grip import Grip
+from blood_presure import BloodPressure
+from spo2 import SpO2
 
 desired_caps = dict(
     platformName='Android',
@@ -54,39 +57,57 @@ driver.implicitly_wait(3)
 login = Login(driver)
 login.login()
 # login
-# nutrition
-nutrition = Nutrition(driver)
-nutrition.nutrition()
-# nutrition
-driver.back()
-time.sleep(3)
-# # step
-# step = Step(driver)
-# step.step()
-# # step
+# # nutrition
+# nutrition = Nutrition(driver)
+# nutrition.nutrition()
+# # nutrition
+# time.sleep(3)
 # driver.back()
 # time.sleep(3)
-
-# sleep
-sleep = Sleep(driver)
-sleep.sleep()
-# sleep
-driver.back()
-time.sleep(3)
-# age_recognition
-aRecognition = Age_Recognition(driver)
-aRecognition.age_recognition()
-aRecognition.select_photo()
-time.sleep(3)
-aRecognition.take_a_picture()
-# age_recognition
-driver.back()
-time.sleep(3)
-# weight
-weight = Weight(driver)
-weight.weight()
-# weight
-
+# # blood pressure
+# bpressure = BloodPressure(driver)
+# bpressure.bloodPressure()
+# # blood pressure
+# # driver.back()
+# time.sleep(3)
+# # Spo2
+# spo2 = SpO2(driver)
+# spo2.spo2()
+# # Spo2
+# driver.back()
+# time.sleep(3)
+# step
+step = Step(driver)
+step.step()
+# step
+# driver.back()
+# time.sleep(3)
+# # sleep
+# sleep = Sleep(driver)
+# sleep.sleep()
+# # sleep
+# driver.back()
+# time.sleep(3)
+# # age_recognition
+# aRecognition = Age_Recognition(driver)
+# aRecognition.age_recognition()
+# aRecognition.select_photo()
+# time.sleep(3)
+# aRecognition.take_a_picture()
+# # age_recognition
+# driver.back()
+# time.sleep(3)
+# # weight
+# weight = Weight(driver)
+# weight.weight()
+# # weight
+#
+# driver.back()
+# time.sleep(3)
+# # grip strength
+# grip = Grip(driver)
+# grip.grip()
+# # grip strength
 # driver.back()
 # time.sleep(3)
 
