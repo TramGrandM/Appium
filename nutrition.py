@@ -16,5 +16,5 @@ class Nutrition:
     def nutrition(self):
         element = AppiumBy.XPATH, '//android.widget.TextView[@text="Nutrition"]'
         self.scroll_and_find.scroll_and_find(element)
-        print("Aaa")
+        print("Aaa11111111111")
 
