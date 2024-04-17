@@ -12,6 +12,10 @@ from nutrition import Nutrition
 from grip import Grip
 from blood_presure import BloodPressure
 from spo2 import SpO2
+from glucose import Glucose
+from water import Water
+from logout import Logout
+from register import Register
 
 desired_caps = dict(
     platformName='Android',
@@ -57,6 +61,7 @@ driver.implicitly_wait(3)
 login = Login(driver)
 login.login()
 # login
+
 # # nutrition
 # nutrition = Nutrition(driver)
 # nutrition.nutrition()
@@ -74,12 +79,12 @@ login.login()
 # spo2 = SpO2(driver)
 # spo2.spo2()
 # # Spo2
-# driver.back()
-# time.sleep(3)
-# step
-step = Step(driver)
-step.step()
-# step
+# # driver.back()
+# # time.sleep(3)
+# # step
+# step = Step(driver)
+# step.step()
+# # step
 # driver.back()
 # time.sleep(3)
 # # sleep
@@ -88,6 +93,12 @@ step.step()
 # # sleep
 # driver.back()
 # time.sleep(3)
+# # glucose
+# glu = Glucose(driver)
+# glu.glucose()
+# # glucose
+# # driver.back()
+# # time.sleep(3)
 # # age_recognition
 # aRecognition = Age_Recognition(driver)
 # aRecognition.age_recognition()
@@ -101,15 +112,28 @@ step.step()
 # weight = Weight(driver)
 # weight.weight()
 # # weight
-#
-# driver.back()
-# time.sleep(3)
+# # driver.back()
+# # time.sleep(3)
 # # grip strength
 # grip = Grip(driver)
 # grip.grip()
 # # grip strength
-# driver.back()
-# time.sleep(3)
+# # driver.back()
+# # time.sleep(3)
+
+# water
+water = Water(driver)
+water.water()
+# water
+# logout
+logout = Logout(driver)
+logout.logout()
+# logout
+
+# register
+register = Register(driver)
+register.register()
+# register
 
 # connect health source
 # connect = Connection(driver)

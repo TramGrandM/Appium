@@ -29,10 +29,10 @@ class Age_Recognition:
         camera = self.driver.find_element(AppiumBy.XPATH,
                                           '//android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View[1]')
         camera.click()
-        if self.driver.find_element(AppiumBy.XPATH,
-                                    '//android.widget.Button[@resource-id="com.android.packageinstaller:id/permission_allow_button"]').is_displayed():
-            self.driver.find_element(AppiumBy.XPATH,
-                                     '//android.widget.Button[@resource-id="com.android.packageinstaller:id/permission_allow_button"]').click()
+        # if self.driver.find_element(AppiumBy.XPATH,
+        #                             '//android.widget.Button[@resource-id="com.android.packageinstaller:id/permission_allow_button"]').is_displayed():
+        #     self.driver.find_element(AppiumBy.XPATH,
+        #                              '//android.widget.Button[@resource-id="com.android.packageinstaller:id/permission_allow_button"]').click()
         select_photo = self.driver.find_element(AppiumBy.XPATH,
                                                 '//android.widget.LinearLayout[@resource-id="vitalgain.jp:id/register_profile_gallery_layout"]/android.widget.TextView')
         # assert select_photo.text == '写真を選択'

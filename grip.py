@@ -1,3 +1,5 @@
+import time
+
 from appium.webdriver.common.appiumby import AppiumBy
 from scroll_and_find import Scroll_and_Find
 from scroll import Scroll
@@ -10,7 +12,7 @@ class Grip:
         self.scroll = Scroll(self.driver)
 
     def grip(self):
-        element = AppiumBy.ID, 'vitalgain.jp:id/dashboard_grip_strength_manual_input_layout'
+        element = AppiumBy.XPATH, '//android.widget.TextView[@text="Grip strength"]'
         self.scroll_and_find.scroll_and_find(element)
         add = self.driver.find_element(AppiumBy.ID, 'vitalgain.jp:id/add_btn')
         add.click()
@@ -32,4 +34,7 @@ class Grip:
         add_btn = self.driver.find_element(AppiumBy.XPATH,
                                            '//android.widget.Button[@resource-id="vitalgain.jp:id/dialog_add_btn"]')
         add_btn.click()
+        time.sleep(3)
+        back = self.driver.find_element(AppiumBy.XPATH, '//android.widget.ImageButton[@content-desc="Navigate up"]')
+        back.click()
         print("Grip strength - Done!")

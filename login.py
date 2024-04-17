@@ -13,9 +13,12 @@ class Login:
             alert = self.driver.find_element(AppiumBy.ID, 'com.android.packageinstaller:id/permission_allow_button')
             alert.click()
             time.sleep(3)
-            form = self.driver.find_element(AppiumBy.XPATH,
-                                            '(//android.widget.LinearLayout[@resource-id="com.google.android.gms:id/container"])[2]')
-            form.click()
+            # form = self.driver.find_element(AppiumBy.XPATH,
+            #                                 '(//android.widget.LinearLayout[@resource-id="com.google.android.gms:id/container"])[2]')
+            # form.click()
+            time.sleep(3)
+            self.driver.tap([(300, 800)])
+            time.sleep(3)
             login_btn = self.driver.find_element(AppiumBy.ID, 'vitalgain.jp:id/activity_intro_log_in_btn')
             login_btn.click()
             username = self.driver.find_element(AppiumBy.ID, "vitalgain.jp:id/login_username_edt")
