@@ -32,10 +32,10 @@ class Register:
         passw.send_keys("12345678")
         fname = self.driver.find_element(AppiumBy.XPATH,
                                          '//android.widget.EditText[@resource-id="vitalgain.jp:id/register_account_firstname_edt"]')
-        fname.send_keys(f"name{i}")
+        fname.send_keys(f"fname{i}")
         lname = self.driver.find_element(AppiumBy.XPATH,
                                          '//android.widget.EditText[@resource-id="vitalgain.jp:id/register_account_lastname_edt"]')
-        lname.send_keys(f"name{i}")
+        lname.send_keys(f"lname{i}")
         next_btn = self.driver.find_element(AppiumBy.XPATH,
                                             '//android.widget.Button[@resource-id="vitalgain.jp:id/register_account_next_btn"]')
         next_btn.click()

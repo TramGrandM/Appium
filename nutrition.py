@@ -55,6 +55,7 @@ class Nutrition:
         choice.click()
         add_btn = self.driver.find_element(AppiumBy.ID, 'vitalgain.jp:id/dialog_add_food_add_btn')
         add_btn.click()
+        time.sleep(3)
         self.driver.back()
         time.sleep(2)
         back = self.driver.find_element(AppiumBy.XPATH, '//android.widget.ImageButton[@content-desc="Navigate up"]')

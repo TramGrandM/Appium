@@ -28,7 +28,7 @@ class SpO2:
         add_btn = self.driver.find_element(AppiumBy.XPATH,
                                            '//android.widget.Button[@resource-id="vitalgain.jp:id/dialog_add_btn"]')
         add_btn.click()
-        time.sleep(2)
+        time.sleep(3)
         back = self.driver.find_element(AppiumBy.XPATH, '//android.widget.ImageButton[@content-desc="Navigate up"]')
         back.click()
         print("SpO2 - Done!")

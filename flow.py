@@ -16,13 +16,14 @@ from glucose import Glucose
 from water import Water
 from logout import Logout
 from register import Register
+from health_assessment import Health_Assessment
 
 desired_caps = dict(
     platformName='Android',
     deviceName='Galaxy A6',
     platformVersion='8.0.0',
     automationName='UiAutomator2',
-    # app='C:\\Users\\tramp\\Downloads\\vitalgain.jp_24.04.03_240403.apk',
+    app='C:\\Users\\tramp\\Downloads\\vitalgain.jp_24.04.15_240415.apk',
     appActivity='com.genkimiru.app.presentation.splash.SplashActivity',
     # appActivity='VitalGain',
     appPackage='vitalgain.jp',
@@ -61,7 +62,10 @@ driver.implicitly_wait(3)
 login = Login(driver)
 login.login()
 # login
-
+# health_assessment
+health = Health_Assessment(driver)
+health.health_assessment()
+# health_assessment
 # # nutrition
 # nutrition = Nutrition(driver)
 # nutrition.nutrition()
@@ -120,20 +124,18 @@ login.login()
 # # grip strength
 # # driver.back()
 # # time.sleep(3)
-
-# water
-water = Water(driver)
-water.water()
-# water
-# logout
-logout = Logout(driver)
-logout.logout()
-# logout
-
-# register
-register = Register(driver)
-register.register()
-# register
+# # water
+# water = Water(driver)
+# water.water()
+# # water
+# # logout
+# logout = Logout(driver)
+# logout.logout()
+# # logout
+# # register
+# register = Register(driver)
+# register.register()
+# # register
 
 # connect health source
 # connect = Connection(driver)
