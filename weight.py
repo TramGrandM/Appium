@@ -11,6 +11,7 @@ class Weight:
         self.scroll_and_find = Scroll_and_Find(self.driver)
 
     def weight(self):
+        self.driver.implicitly_wait(5)
         element = AppiumBy.XPATH, '//android.widget.TextView[@text="Weight"]'
         self.scroll_and_find.scroll_and_find(element)
 
@@ -21,11 +22,14 @@ class Weight:
         add_pic.click()
         select = self.driver.find_element(AppiumBy.XPATH, '//androidx.appcompat.widget.LinearLayoutCompat[@resource-id="vitalgain.jp:id/photo_selector_gallery_layout"]')
         select.click()
+        allow = self.driver.find_element(AppiumBy.XPATH,
+                                         '//android.widget.Button[@resource-id="com.android.packageinstaller:id/permission_allow_button"]')
+        allow.click()
         img = self.driver.find_element(AppiumBy.XPATH, '(//android.widget.ImageView[@content-desc="Image"])[1]')
         img.click()
         add_btn = self.driver.find_element(AppiumBy.XPATH, '//android.widget.Button[@resource-id="vitalgain.jp:id/dialog_record_weight_add_bt"]')
         add_btn.click()
-        time.sleep(3)
+        time.sleep(8)
         back = self.driver.find_element(AppiumBy.XPATH, '//android.widget.ImageButton[@content-desc="Navigate up"]')
         back.click()
         print("Weight - Done!")

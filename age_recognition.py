@@ -40,14 +40,15 @@ class Age_Recognition:
         # if self.driver.find_element(AppiumBy.XPATH, '//android.widget.Button[@resource-id="com.android.packageinstaller:id/permission_allow_button"]').is_displayed():
         #     self.driver.find_element(AppiumBy.XPATH, '//android.widget.Button[@resource-id="com.android.packageinstaller:id/permission_allow_button"]').click()
 
-        photos = self.driver.find_element(AppiumBy.XPATH,
-                                          '(//android.widget.ImageView[@resource-id="android:id/icon"])[1]')
-        photos.click()
+        # photos = self.driver.find_element(AppiumBy.XPATH,
+        #                                   '(//android.widget.ImageView[@resource-id="android:id/icon"])[2]')
+        # photos.click()
         choose_folder = self.driver.find_element(AppiumBy.XPATH,
-                                                 '//android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[2]')
+                                                 '//android.widget.TextView[@resource-id="android:id/text1" and @text="Gallery"]')
         choose_folder.click()
+        time.sleep(3)
         choose_photo = self.driver.find_element(AppiumBy.XPATH,
-                                                '//android.widget.ImageView[@content-desc="Photo taken on Mar 29, 2024 17:01:56"]')
+                                                '//android.view.View[@resource-id="com.sec.android.gallery3d:id/gl_root_view"]/com.sec.samsung.gallery.glview.composeView.ThumbObject[1]')
         choose_photo.click()
         choise_btn = self.driver.find_element(AppiumBy.ID, 'vitalgain.jp:id/tv_ok')
         choise_btn.click()

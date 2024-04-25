@@ -19,6 +19,7 @@ class Scroll_and_Find:
                 text = find_ele.text
                 print("Function:", text)
                 find_ele.click()
+                print("Click")
             except NoSuchElementException:
                 self.scroll.scroll()
 

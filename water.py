@@ -9,6 +9,7 @@ class Water:
         self.scroll_and_find = Scroll_and_Find(self.driver)
 
     def water(self):
+        self.driver.implicitly_wait(5)
         element = AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Water")'
         self.scroll_and_find.scroll_and_find(element)
         increase = self.driver.find_element(AppiumBy.XPATH,

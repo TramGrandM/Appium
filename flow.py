@@ -17,13 +17,16 @@ from water import Water
 from logout import Logout
 from register import Register
 from health_assessment import Health_Assessment
+from ketone import Ketone
+from change_avt import Change_avt
+from edit_profile import Edit_profile
 
 desired_caps = dict(
     platformName='Android',
     deviceName='Galaxy A6',
     platformVersion='8.0.0',
     automationName='UiAutomator2',
-    app='C:\\Users\\tramp\\Downloads\\vitalgain.jp_24.04.15_240415.apk',
+    # app='C:\\Users\\tramp\\Downloads\\vitalgain.jp_24.04.15_240415.apk',
     appActivity='com.genkimiru.app.presentation.splash.SplashActivity',
     # appActivity='VitalGain',
     appPackage='vitalgain.jp',
@@ -62,47 +65,55 @@ driver.implicitly_wait(3)
 login = Login(driver)
 login.login()
 # login
-# health_assessment
-health = Health_Assessment(driver)
-health.health_assessment()
-# health_assessment
-# # nutrition
-# nutrition = Nutrition(driver)
-# nutrition.nutrition()
-# # nutrition
-# time.sleep(3)
+
+time.sleep(10)
+# step
+step = Step(driver)
+step.step()
+# step
+driver.back()
+time.sleep(3)
+# sleep
+sleep = Sleep(driver)
+sleep.sleep()
+# sleep
+driver.back()
+time.sleep(3)
+# weight
+weight = Weight(driver)
+weight.weight()
+# weight
+# water
+water = Water(driver)
+water.water()
+# water
+# nutrition
+nutrition = Nutrition(driver)
+nutrition.nutrition()
+# nutrition
 # driver.back()
 # time.sleep(3)
-# # blood pressure
-# bpressure = BloodPressure(driver)
-# bpressure.bloodPressure()
-# # blood pressure
-# # driver.back()
-# time.sleep(3)
-# # Spo2
-# spo2 = SpO2(driver)
-# spo2.spo2()
-# # Spo2
-# # driver.back()
-# # time.sleep(3)
-# # step
-# step = Step(driver)
-# step.step()
-# # step
-# driver.back()
-# time.sleep(3)
-# # sleep
-# sleep = Sleep(driver)
-# sleep.sleep()
-# # sleep
-# driver.back()
-# time.sleep(3)
-# # glucose
-# glu = Glucose(driver)
-# glu.glucose()
-# # glucose
-# # driver.back()
-# # time.sleep(3)
+# blood pressure
+bpressure = BloodPressure(driver)
+bpressure.bloodPressure()
+# blood pressure
+# Spo2
+spo2 = SpO2(driver)
+spo2.spo2()
+# Spo2
+
+# grip strength
+grip = Grip(driver)
+grip.grip()
+# grip strength
+# ketone
+ketone = Ketone(driver)
+ketone.ketone()
+# ketone
+# glucose
+glu = Glucose(driver)
+glu.glucose()
+# glucose
 # # age_recognition
 # aRecognition = Age_Recognition(driver)
 # aRecognition.age_recognition()
@@ -110,24 +121,14 @@ health.health_assessment()
 # time.sleep(3)
 # aRecognition.take_a_picture()
 # # age_recognition
-# driver.back()
-# time.sleep(3)
-# # weight
-# weight = Weight(driver)
-# weight.weight()
-# # weight
-# # driver.back()
-# # time.sleep(3)
-# # grip strength
-# grip = Grip(driver)
-# grip.grip()
-# # grip strength
-# # driver.back()
-# # time.sleep(3)
-# # water
-# water = Water(driver)
-# water.water()
-# # water
+driver.back()
+time.sleep(5)
+
+
+# # health_assessment
+# health = Health_Assessment(driver)
+# health.health_assessment()
+# # health_assessment
 # # logout
 # logout = Logout(driver)
 # logout.logout()
@@ -136,7 +137,15 @@ health.health_assessment()
 # register = Register(driver)
 # register.register()
 # # register
-
+# change_avt
+change = Change_avt(driver)
+change.change_avt()
+# change_avt
+time.sleep(3)
+# edit profile
+editpr = Edit_profile(driver)
+editpr.edit_profile()
+# edit profile
 # connect health source
 # connect = Connection(driver)
 # connect.connection()

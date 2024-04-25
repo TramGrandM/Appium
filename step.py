@@ -33,15 +33,18 @@ class Step:
             today = datetime.date.today()
             date = today - datetime.timedelta(days=2)
             arr = connect(
-                f"SELECT step, activity_time FROM user_health_source_step_history WHERE user_id = 2386 AND start_date = '{date} 00:00:00'")
+                f"SELECT step, activity_time FROM user_health_source_step_history WHERE user_id = 19778 AND start_date = '{date} 00:00:00'")
             for a in arr:
                 assert a[0] == int(convert_step), "Step not equal"
+                print('step:', a[0])
                 if activity_text == '--':
                     activity_text = 'NULL'
                     assert a[1] == activity_text, "Activity time not equal"
+                    print('Activity:', a[1])
                 else:
                     act = round(a[1] / 60)
                     assert int(activity_text) == act, "Activity time not equal"
+                    print('Activity:', act)
 
         except Exception as e:
             print("Exception:", e)
