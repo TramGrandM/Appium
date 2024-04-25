@@ -21,6 +21,9 @@ class Weight:
         add_pic.click()
         select = self.driver.find_element(AppiumBy.XPATH, '//androidx.appcompat.widget.LinearLayoutCompat[@resource-id="vitalgain.jp:id/photo_selector_gallery_layout"]')
         select.click()
+        allow = self.driver.find_element(AppiumBy.XPATH,
+                                         '//android.widget.Button[@resource-id="com.android.packageinstaller:id/permission_allow_button"]')
+        allow.click()
         img = self.driver.find_element(AppiumBy.XPATH, '(//android.widget.ImageView[@content-desc="Image"])[1]')
         img.click()
         add_btn = self.driver.find_element(AppiumBy.XPATH, '//android.widget.Button[@resource-id="vitalgain.jp:id/dialog_record_weight_add_bt"]')

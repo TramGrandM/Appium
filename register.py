@@ -42,3 +42,4 @@ class Register:
         register_btn = self.driver.find_element(AppiumBy.XPATH,
                                                 '//android.widget.Button[@resource-id="vitalgain.jp:id/register_account_complete_btn"]')
         register_btn.click()
+        print("Register - Done!")

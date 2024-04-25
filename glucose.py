@@ -18,13 +18,14 @@ class Glucose:
         time.sleep(2)
         glu = self.driver.find_element(AppiumBy.XPATH, '//android.app.Dialog/android.view.View/android.view.View[2]/android.view.View')
         glu.click()
+        time.sleep(2)
         self.driver.tap([(280, 1050)])
         # self.driver.tap([275, 1300])
         time.sleep(2)
         self.driver.tap([(625, 1065)])
         time.sleep(2)
         self.driver.tap([(160, 1435)])
-        time.sleep(2)
+        time.sleep(5)
         add_img = self.driver.find_element(AppiumBy.XPATH, '//android.widget.Button[@text="add"]')
         add_img.click()
         allow = self.driver.find_element(AppiumBy.XPATH,
@@ -33,8 +34,9 @@ class Glucose:
         select = self.driver.find_element(AppiumBy.XPATH, '//android.widget.TextView[@text="Select photos"]')
         select.click()
         library = self.driver.find_element(AppiumBy.XPATH,
-                                           '(//android.widget.ImageView[@resource-id="android:id/icon"])[2]')
+                                           '//android.widget.TextView[@resource-id="android:id/text1" and @text="Gallery"]')
         library.click()
+        time.sleep(2)
         img = self.driver.find_element(AppiumBy.XPATH,
                                        '//android.view.View[@resource-id="com.sec.android.gallery3d:id/gl_root_view"]/com.sec.samsung.gallery.glview.composeView.ThumbObject[1]')
         img.click()
