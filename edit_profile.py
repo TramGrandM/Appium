@@ -33,6 +33,7 @@ class Edit_profile:
         height_input = self.driver.find_element(AppiumBy.XPATH, '//android.widget.EditText[@resource-id="vitalgain.jp:id/register_height_edt"]')
         height_input.clear()
         height_input.send_keys(f'{h}')
+
         save_1 = self.driver.find_element(AppiumBy.XPATH, '//android.widget.TextView[@resource-id="vitalgain.jp:id/activity_update_apply"]')
         save_1.click()
         time.sleep(5)
