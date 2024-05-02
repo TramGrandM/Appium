@@ -3,7 +3,6 @@ from scroll_and_find import Scroll_and_Find
 from scroll import Scroll
 import time
 from connect_db import connect
-from convert_time import convert_time_2
 from compare_sleep import compare_sleep
 import datetime
 
@@ -44,8 +43,10 @@ class Sleep:
         wake_str = wake.text
         # compare
         today = datetime.date.today()
+        print(today)
         try:
-            arr = connect(f"SELECT user_id, total_sleep_time, deep, light, rem , wake FROM user_health_source_sleep_history WHERE user_id = '19778' AND start_date = '{today} 00:00:00' ")
+            arr = connect(
+                f"SELECT user_id, total_sleep_time, deep, light, rem , wake FROM user_health_source_sleep_history WHERE user_id = 19778 AND start_date = '{today} 00:00:00' ")
             compare_sleep(arr, 1, total_str)
             compare_sleep(arr, 2, deep_str)
             compare_sleep(arr, 3, light_str)
@@ -55,5 +56,3 @@ class Sleep:
             print(e)
         finally:
             print("Sleep - Done!")
-
-
