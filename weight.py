@@ -11,10 +11,9 @@ class Weight:
         self.scroll_and_find = Scroll_and_Find(self.driver)
 
     def weight(self):
-        self.driver.implicitly_wait(5)
-        element = AppiumBy.XPATH, '//android.widget.TextView[@text="Weight"]'
+        element = AppiumBy.XPATH, '//android.widget.FrameLayout[@resource-id="vitalgain.jp:id/dashboard_bmi_view"]'
         self.scroll_and_find.scroll_and_find(element)
-
+        time.sleep(5)
         weight = self.driver.find_element(AppiumBy.XPATH, '//android.widget.EditText[@resource-id="vitalgain.jp:id/dialog_record_weight_edt"]')
         weight.click()
         weight.send_keys('50')

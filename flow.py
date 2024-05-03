@@ -20,6 +20,8 @@ from health_assessment import Health_Assessment
 from ketone import Ketone
 from change_avt import Change_avt
 from edit_profile import Edit_profile
+from quit_smoke import Quit_smoke
+from share_data import Share_data
 
 desired_caps = dict(
     platformName='Android',
@@ -66,64 +68,67 @@ login = Login(driver)
 login.login()
 # login
 
-time.sleep(10)
-# step
-step = Step(driver)
-step.step()
-# step
-driver.back()
-time.sleep(3)
-# sleep
-sleep = Sleep(driver)
-sleep.sleep()
-# sleep
-driver.back()
-time.sleep(3)
-# weight
-weight = Weight(driver)
-weight.weight()
-# weight
-# water
-water = Water(driver)
-water.water()
-# water
-# nutrition
-nutrition = Nutrition(driver)
-nutrition.nutrition()
-# nutrition
+# time.sleep(10)
+# # step
+# step = Step(driver)
+# step.step()
+# # step
 # driver.back()
 # time.sleep(3)
-# blood pressure
-bpressure = BloodPressure(driver)
-bpressure.bloodPressure()
-# blood pressure
-# Spo2
-spo2 = SpO2(driver)
-spo2.spo2()
-# Spo2
-
-# grip strength
-grip = Grip(driver)
-grip.grip()
-# grip strength
-# ketone
-ketone = Ketone(driver)
-ketone.ketone()
-# ketone
-# glucose
-glu = Glucose(driver)
-glu.glucose()
-# glucose
-# # age_recognition
-# aRecognition = Age_Recognition(driver)
-# aRecognition.age_recognition()
-# aRecognition.select_photo()
+# # sleep
+# sleep = Sleep(driver)
+# sleep.sleep()
+# # sleep
+# driver.back()
 # time.sleep(3)
-# aRecognition.take_a_picture()
-# # age_recognition
-driver.back()
-time.sleep(5)
-
+# # weight
+# weight = Weight(driver)
+# weight.weight()
+# # weight
+# # water
+# water = Water(driver)
+# water.water()
+# # water
+# # nutrition
+# nutrition = Nutrition(driver)
+# nutrition.nutrition()
+# # nutrition
+# # blood pressure
+# bpressure = BloodPressure(driver)
+# bpressure.bloodPressure()
+# # blood pressure
+# # # Spo2
+# # spo2 = SpO2(driver)
+# # spo2.spo2()
+# # # Spo2
+# # grip strength
+# grip = Grip(driver)
+# grip.grip()
+# # grip strength
+# # ketone
+# ketone = Ketone(driver)
+# ketone.ketone()
+# # ketone
+# # glucose
+# glu = Glucose(driver)
+# glu.glucose()
+# # glucose
+# # quit smoking
+# quits = Quit_smoke(driver)
+# quits.quit_smoke()
+# # quit smoking
+# # # age_recognition
+# # aRecognition = Age_Recognition(driver)
+# # aRecognition.age_recognition()
+# # aRecognition.select_photo()
+# # time.sleep(3)
+# # aRecognition.take_a_picture()
+# # # age_recognition
+#
+# # share_data
+# share = Share_data(driver)
+# share.share_data()
+# # share_data
 
 # # health_assessment
 # health = Health_Assessment(driver)
@@ -137,23 +142,21 @@ time.sleep(5)
 # register = Register(driver)
 # register.register()
 # # register
+# # change_avt
+# change = Change_avt(driver)
+# change.change_avt()
+# # change_avt
+# time.sleep(3)
 
-# change_avt
-change = Change_avt(driver)
-change.change_avt()
-# change_avt
-time.sleep(3)
 # edit profile
 editpr = Edit_profile(driver)
 editpr.edit_profile()
 # edit profile
 
-# connect health source
+# # connect health source
 # connect = Connection(driver)
 # connect.connection()
-# connect health source
-
-
+# # connect health source
 # dashboard_setting
 # db_setting = Dashboard_setting(driver)
 # db_setting.dashboard_setting()

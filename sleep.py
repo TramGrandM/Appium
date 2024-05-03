@@ -27,19 +27,19 @@ class Sleep:
         self.scroll.scroll()
         time.sleep(10)
         total = self.driver.find_element(AppiumBy.XPATH,
-                                         '//android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View[15]/android.view.View[2]/android.view.View[1]/android.widget.TextView')
+                                         '//android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View[1]/android.view.View/android.view.View[15]/android.view.View[2]/android.view.View[1]/android.widget.TextView')
         total_str = total.text
         deep = self.driver.find_element(AppiumBy.XPATH,
-                                        '//android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View[15]/android.view.View[2]/android.view.View[2]/android.widget.TextView')
+                                        '//android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View[1]/android.view.View/android.view.View[15]/android.view.View[2]/android.view.View[2]/android.widget.TextView')
         deep_str = deep.text
         light = self.driver.find_element(AppiumBy.XPATH,
-                                         '//android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View[15]/android.view.View[2]/android.view.View[3]/android.widget.TextView')
+                                         '//android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View[1]/android.view.View/android.view.View[15]/android.view.View[2]/android.view.View[3]/android.widget.TextView')
         light_str = light.text
         rem = self.driver.find_element(AppiumBy.XPATH,
-                                       '//android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View[15]/android.view.View[2]/android.view.View[4]/android.widget.TextView')
+                                       '//android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View[1]/android.view.View/android.view.View[15]/android.view.View[2]/android.view.View[4]/android.widget.TextView')
         rem_str = rem.text
         wake = self.driver.find_element(AppiumBy.XPATH,
-                                        '//android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View[15]/android.view.View[2]/android.view.View[5]/android.widget.TextView')
+                                        '//android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View[1]/android.view.View/android.view.View[15]/android.view.View[2]/android.view.View[5]/android.widget.TextView')
         wake_str = wake.text
         # compare
         today = datetime.date.today()

@@ -17,8 +17,6 @@ class Connection:
         time.sleep(3)
         setting_btn = self.driver.find_element(AppiumBy.XPATH, '//android.widget.FrameLayout[@content-desc="Settings"]')
         setting_btn.click()
-        time.sleep(1)
-        print("1")
         choose_hs = self.driver.find_element(AppiumBy.XPATH,
                                              '//android.widget.TextView[@resource-id="vitalgain.jp:id/edit_profile_tv" and @text="Health data source"]')
         choose_hs.click()
@@ -36,9 +34,10 @@ class Connection:
         ok_btn = self.driver.find_element(AppiumBy.ID, 'vitalgain.jp:id/right_button')
         ok_btn.click()
         time.sleep(5)
-        device = self.driver.find_element(AppiumBy.ID, 'vitalgain.jp:id/bluetooth_device_name_tv')
-        if device.is_displayed():
-            device.click()
+
+        # device = self.driver.find_element(AppiumBy.ID, 'vitalgain.jp:id/bluetooth_device_name_tv')
+        if self.driver.find_elements(AppiumBy.ID, 'vitalgain.jp:id/bluetooth_device_name_tv'):
+            self.driver.find_element(AppiumBy.ID, 'vitalgain.jp:id/bluetooth_device_name_tv').click()
             ok_btn_1 = self.driver.find_element(AppiumBy.ID, 'vitalgain.jp:id/right_button')
             ok_btn_1.click()
             time.sleep(8)
@@ -50,3 +49,7 @@ class Connection:
             time.sleep(10)
         else:
             print("Not found")
+            cancle = self.driver.find_element(AppiumBy.XPATH, '//android.widget.Button[@resource-id="vitalgain.jp:id/left_button"]')
+            cancle.click()
+        back = self.driver.find_element(AppiumBy.XPATH, '//android.widget.ImageButton[@content-desc="Navigate up"]')
+        back.click()

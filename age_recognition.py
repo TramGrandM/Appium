@@ -26,32 +26,35 @@ class Age_Recognition:
 
     def select_photo(self):
         time.sleep(3)
-        camera = self.driver.find_element(AppiumBy.XPATH,
-                                          '//android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View[1]')
-        camera.click()
+        # camera = self.driver.find_element(AppiumBy.XPATH,
+        #                                   '//android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View[1]')
+        # camera.click()
+        self.driver.tap([(540, 440)])
         # if self.driver.find_element(AppiumBy.XPATH,
         #                             '//android.widget.Button[@resource-id="com.android.packageinstaller:id/permission_allow_button"]').is_displayed():
         #     self.driver.find_element(AppiumBy.XPATH,
         #                              '//android.widget.Button[@resource-id="com.android.packageinstaller:id/permission_allow_button"]').click()
+
         select_photo = self.driver.find_element(AppiumBy.XPATH,
-                                                '//android.widget.LinearLayout[@resource-id="vitalgain.jp:id/register_profile_gallery_layout"]/android.widget.TextView')
+                                                '//android.widget.LinearLayout[@resource-id="vitalgain.jp:id/register_profile_gallery_layout"]')
         # assert select_photo.text == '写真を選択'
         select_photo.click()
+
         # if self.driver.find_element(AppiumBy.XPATH, '//android.widget.Button[@resource-id="com.android.packageinstaller:id/permission_allow_button"]').is_displayed():
         #     self.driver.find_element(AppiumBy.XPATH, '//android.widget.Button[@resource-id="com.android.packageinstaller:id/permission_allow_button"]').click()
 
         # photos = self.driver.find_element(AppiumBy.XPATH,
         #                                   '(//android.widget.ImageView[@resource-id="android:id/icon"])[2]')
         # photos.click()
-        choose_folder = self.driver.find_element(AppiumBy.XPATH,
-                                                 '//android.widget.TextView[@resource-id="android:id/text1" and @text="Gallery"]')
-        choose_folder.click()
+        # choose_folder = self.driver.find_element(AppiumBy.XPATH,
+        #                                          '//android.widget.TextView[@resource-id="android:id/text1" and @text="Gallery"]')
+        # choose_folder.click()
         time.sleep(3)
         choose_photo = self.driver.find_element(AppiumBy.XPATH,
-                                                '//android.view.View[@resource-id="com.sec.android.gallery3d:id/gl_root_view"]/com.sec.samsung.gallery.glview.composeView.ThumbObject[1]')
+                                                '(//android.widget.ImageView[@content-desc="Image"])[1]')
         choose_photo.click()
-        choise_btn = self.driver.find_element(AppiumBy.ID, 'vitalgain.jp:id/tv_ok')
-        choise_btn.click()
+        # choise_btn = self.driver.find_element(AppiumBy.ID, 'vitalgain.jp:id/tv_ok')
+        # choise_btn.click()
         # self.scroll.scroll()
         time.sleep(5)
         ok_btn = self.driver.find_element(AppiumBy.XPATH,
@@ -64,17 +67,17 @@ class Age_Recognition:
         #                                 '//android.widget.TextView[@text="カメラで撮影して\n診断開始"]')
         # print("Text:", text.text)
         # assert text.text == "カメラで撮影して\n診断開始"
-        camera = self.driver.find_element(AppiumBy.XPATH,
-                                          '//android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View[1]')
-        camera.click()
-
+        # camera_1 = self.driver.find_element(AppiumBy.XPATH,
+        #                                   '//android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View[1]')
+        # camera_1.click()
+        self.driver.tap([(540, 440)])
         # allow_btn = self.driver.find_element(AppiumBy.XPATH,
         #                                      '//android.widget.Button[@resource-id="com.android.packageinstaller:id/permission_allow_button"]')
         # if allow_btn.is_displayed():
         #     allow_btn.click()
         time.sleep(5)
         take_apicture = self.driver.find_element(AppiumBy.XPATH,
-                                                 '//android.widget.LinearLayout[@resource-id="vitalgain.jp:id/register_profile_camera_layout"]/android.widget.TextView')
+                                                 '//android.widget.LinearLayout[@resource-id="vitalgain.jp:id/register_profile_camera_layout"]')
         # assert take_apicture.text == '写真を撮る'
         take_apicture.click()
 
@@ -100,4 +103,7 @@ class Age_Recognition:
         # print("Text 2 :", text_2.text)
         btn_ok_1 = self.driver.find_element(AppiumBy.XPATH, '//android.widget.Button[@text="OK"]')
         btn_ok_1.click()
+        time.sleep(3)
+        back = self.driver.find_element(AppiumBy.XPATH, '//android.widget.Button[@text="menu"]')
+        back.click()
         print("Age Recognition - Done!")

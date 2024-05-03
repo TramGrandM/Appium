@@ -12,11 +12,12 @@ class Glucose:
         element = AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Glucose")'
         self.scroll_and_find.scroll_and_find(element)
         # add record
-        time.sleep(3)
+        time.sleep(5)
         add_record = self.driver.find_element(AppiumBy.XPATH, '//android.widget.Button[@text="Add record"]')
         add_record.click()
         time.sleep(2)
-        glu = self.driver.find_element(AppiumBy.XPATH, '//android.app.Dialog/android.view.View/android.view.View[2]/android.view.View')
+        glu = self.driver.find_element(AppiumBy.XPATH, '//android.app.Dialog/android.view.View[2]/android.view.View')
+        # glu.send_keys('50')
         glu.click()
         time.sleep(2)
         self.driver.tap([(280, 1050)])
@@ -33,16 +34,16 @@ class Glucose:
         allow.click()
         select = self.driver.find_element(AppiumBy.XPATH, '//android.widget.TextView[@text="Select photos"]')
         select.click()
-        library = self.driver.find_element(AppiumBy.XPATH,
-                                           '//android.widget.TextView[@resource-id="android:id/text1" and @text="Gallery"]')
-        library.click()
-        time.sleep(2)
+        # library = self.driver.find_element(AppiumBy.XPATH,
+        #                                    '//android.widget.TextView[@resource-id="android:id/text1" and @text="Gallery"]')
+        # library.click()
+        # time.sleep(2)
         img = self.driver.find_element(AppiumBy.XPATH,
-                                       '//android.view.View[@resource-id="com.sec.android.gallery3d:id/gl_root_view"]/com.sec.samsung.gallery.glview.composeView.ThumbObject[1]')
+                                       '(//android.widget.ImageView[@content-desc="Image"])[1]')
         img.click()
-        choice = self.driver.find_element(AppiumBy.XPATH,
-                                          '//android.widget.TextView[@resource-id="vitalgain.jp:id/tv_ok"]')
-        choice.click()
+        # choice = self.driver.find_element(AppiumBy.XPATH,
+        #                                   '//android.widget.TextView[@resource-id="vitalgain.jp:id/tv_ok"]')
+        # choice.click()
         time.sleep(5)
         save = self.driver.find_element(AppiumBy.XPATH, '//android.widget.Button[@text="SAVE"]')
         save.click()

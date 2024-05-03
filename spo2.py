@@ -14,6 +14,7 @@ class SpO2:
     def spo2(self):
         element = AppiumBy.XPATH, '//android.widget.TextView[@text="SpO2"]'
         self.scroll_and_find.scroll_and_find(element)
+        time.sleep(3)
         add = self.driver.find_element(AppiumBy.XPATH, '//android.widget.Button[@resource-id="vitalgain.jp:id/add_btn"]')
         add.click()
         spo2 = self.driver.find_element(AppiumBy.XPATH, '//android.widget.EditText[@resource-id="vitalgain.jp:id/percent_edt"]')
